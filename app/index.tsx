@@ -1,5 +1,5 @@
-import { Link, Stack } from "expo-router";
-import { StyleSheet, View, Text } from "react-native";
+import { Stack } from "expo-router";
+import { View, Text } from "react-native";
 import { createStyleSheet, useStyles } from "react-native-unistyles";
 
 export default function NotFoundScreen() {
@@ -14,7 +14,7 @@ export default function NotFoundScreen() {
   );
 }
 
-const stylesheet = createStyleSheet(({ spaces, colors }) => ({
+const stylesheet = createStyleSheet(({ spaces, colors, fonts }) => ({
   container: {
     flex: spaces.one,
     alignItems: "center",
