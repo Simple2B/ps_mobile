@@ -5,7 +5,7 @@ import { Mail, Lock } from "lucide-react-native";
 import { useState } from "react";
 
 const MyButtonMeta: Meta<typeof BaseInput> = {
-  title: "MyButton",
+  title: "BaseInput",
   component: BaseInput,
 
   decorators: [

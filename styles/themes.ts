@@ -8,6 +8,7 @@ export const lightTheme = {
   colors: {
     ...DefaultTheme.colors,
     primary: "#3949AB",
+    accent: " #27368F",
     secondary: "#E6E9FA",
     text: "#828282",
     textSecondary: "#666",
@@ -16,6 +17,8 @@ export const lightTheme = {
     shadowColor: "#000",
     card: "#fff",
     textFocused: "#000",
+    transparent: "transparent",
+    hoverBG: "#F0F0F0",
   },
   fontSizes: FONT_SIZES,
   spaces: SPACES,
@@ -27,6 +30,7 @@ export const darkTheme = {
   colors: {
     ...DarkTheme.colors,
     primary: "#3949AB",
+    accent: " #27368F",
     secondary: "#E6E9FA",
     text: "#828282",
     textSecondary: "#666",
@@ -35,6 +39,8 @@ export const darkTheme = {
     shadowColor: "#000",
     card: "#fff",
     textFocused: "#000",
+    transparent: "transparent",
+    hoverBG: "#F0F0F0",
   },
   fontSizes: FONT_SIZES,
   spaces: SPACES,
