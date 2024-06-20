@@ -14,7 +14,7 @@ export default function NotFoundScreen() {
   );
 }
 
-const stylesheet = createStyleSheet(({ spaces, colors, fonts }) => ({
+const stylesheet = createStyleSheet(({ spaces, colors }) => ({
   container: {
     flex: spaces.one,
     alignItems: "center",

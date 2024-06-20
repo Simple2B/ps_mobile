@@ -1,30 +1,20 @@
 import { ThemeProvider } from "@react-navigation/native";
-import { useFonts } from "expo-font";
 import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
-import { useEffect } from "react";
 import "react-native-reanimated";
-import { useColorScheme } from "react-native";
+import Constants from "expo-constants";
 
 import "@/styles/unistyles";
-import { darkTheme, lightTheme } from "@/styles/themes";
+import { useAppInit } from "@/hooks/useAppInit";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
-SplashScreen.preventAutoHideAsync();
+Constants.expoConfig?.extra?.storybookEnabled !== "true" &&
+  SplashScreen.preventAutoHideAsync();
 
-export default function RootLayout() {
-  const colorScheme = useColorScheme();
-  const colorTheme = colorScheme === "light" ? lightTheme : darkTheme;
-  const [loaded] = useFonts({
-    LatoRegular: require("../assets/fonts/Lato-Regular.ttf"),
-    LatoSemibold: require("../assets/fonts/Lato-Semibold.ttf"),
-  });
+function RootLayout() {
+  console.log("RootLayout");
 
-  useEffect(() => {
-    if (loaded) {
-      SplashScreen.hideAsync();
-    }
-  }, [loaded]);
+  const { loaded, colorTheme } = useAppInit();
 
   if (!loaded) {
     return null;
@@ -39,3 +29,16 @@ export default function RootLayout() {
     </ThemeProvider>
   );
 }
+
+let AppEntryPoint = RootLayout;
+
+if (Constants.expoConfig?.extra?.storybookEnabled === "true") {
+  console.log(
+    "storybookEnabled",
+    Constants.expoConfig?.extra?.storybookEnabled
+  );
+
+  AppEntryPoint = require("../.storybook").default;
+}
+
+export default AppEntryPoint;
