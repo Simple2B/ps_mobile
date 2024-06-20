@@ -16,7 +16,8 @@ export default function RootLayout() {
   const colorScheme = useColorScheme();
   const colorTheme = colorScheme === "light" ? lightTheme : darkTheme;
   const [loaded] = useFonts({
-    SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf"),
+    LatoRegular: require("../assets/fonts/Lato-Regular.ttf"),
+    LatoSemibold: require("../assets/fonts/Lato-Semibold.ttf"),
   });
 
   useEffect(() => {
