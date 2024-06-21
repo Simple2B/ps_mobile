@@ -1,5 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Mail } from "lucide-react-native";
+import { Mail, Lock } from "lucide-react-native";
 import React, { FC } from "react";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
 import { View } from "react-native";
@@ -48,7 +48,7 @@ export const RegisterForm: FC = () => {
             placeholder="Password"
             value={value}
             onChange={onChange}
-            Icon={Mail}
+            Icon={Lock}
             variant="password"
             error={error?.message}
           />
@@ -62,7 +62,7 @@ export const RegisterForm: FC = () => {
             placeholder="Confirm Password"
             value={value}
             onChange={onChange}
-            Icon={Mail}
+            Icon={Lock}
             variant="password"
             error={error?.message}
           />

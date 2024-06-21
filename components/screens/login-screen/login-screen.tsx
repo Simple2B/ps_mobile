@@ -22,7 +22,7 @@ export const LoginScreen: FC = () => {
     <View style={styles.wrapper}>
       <View style={styles.logoArea}>
         <Logo />
-        <Text style={styles.title}>Log in </Text>
+        <Text style={styles.title}>Log in</Text>
       </View>
       <LoginForm />
       <View style={styles.divider}>

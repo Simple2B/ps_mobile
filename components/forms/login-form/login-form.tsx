@@ -2,7 +2,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
 import React, { FC } from "react";
 import { Alert, Text, View } from "react-native";
-import { Mail } from "lucide-react-native";
+import { Lock, Mail } from "lucide-react-native";
 
 import { BaseButton } from "@/components/buttons/base-button/base-button";
 import { BaseInput } from "@/components/inputs/base-input/base-input";
@@ -51,7 +51,7 @@ export const LoginForm: FC = () => {
             placeholder="Password"
             value={value}
             onChange={onChange}
-            Icon={Mail}
+            Icon={Lock}
             variant="password"
             error={error?.message}
           />
