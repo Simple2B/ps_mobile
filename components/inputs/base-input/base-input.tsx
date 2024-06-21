@@ -52,9 +52,9 @@ export const BaseInput = forwardRef<TextInput, BaseInputProps>(
         {variant === "password" && (
           <Pressable onPress={handleVisibleToggle}>
             {hidden ? (
-              <EyeOffIcon color={theme.colors.text} />
-            ) : (
               <EyeIcon color={theme.colors.text} />
+            ) : (
+              <EyeOffIcon color={theme.colors.text} />
             )}
           </Pressable>
         )}

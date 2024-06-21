@@ -9,18 +9,20 @@ import { SocialButtons } from "@/components/buttons/social-buttons/social-button
 import { BaseButton } from "@/components/buttons/base-button/base-button";
 
 import { stylesheet } from "./login-screen.style";
+import { useRouter } from "expo-router";
 
 export const LoginScreen: FC = () => {
   const { styles } = useStyles(stylesheet);
+  const router = useRouter();
 
   const handleRegister = () => {
-    console.log("register");
+    router.push("register");
   };
   return (
     <View style={styles.wrapper}>
       <View style={styles.logoArea}>
         <Logo />
-        <Text style={styles.title}>Log in </Text>
+        <Text style={styles.title}>Log in</Text>
       </View>
       <LoginForm />
       <View style={styles.divider}>

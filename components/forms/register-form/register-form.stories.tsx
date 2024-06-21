@@ -1,10 +1,10 @@
 import { View } from "react-native";
 import type { Meta, StoryObj } from "@storybook/react";
-import { LoginForm } from "./login-form";
+import { RegisterForm } from "./register-form";
 
-const MyButtonMeta: Meta<typeof LoginForm> = {
-  title: "Forms/LoginForm",
-  component: LoginForm,
+const MyButtonMeta: Meta<typeof RegisterForm> = {
+  title: "Forms/RegisterForm",
+  component: RegisterForm,
 
   decorators: [
     (Story) => (
@@ -17,4 +17,4 @@ const MyButtonMeta: Meta<typeof LoginForm> = {
 
 export default MyButtonMeta;
 
-export const Basic: StoryObj<typeof LoginForm> = {};
+export const Basic: StoryObj<typeof RegisterForm> = {};
