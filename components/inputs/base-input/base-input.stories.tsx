@@ -5,7 +5,7 @@ import { Mail, Lock } from "lucide-react-native";
 import { useState } from "react";
 
 const MyButtonMeta: Meta<typeof BaseInput> = {
-  title: "MyButton",
+  title: "BaseInput",
   component: BaseInput,
 
   decorators: [
@@ -36,5 +36,13 @@ export const Password: StoryObj<typeof BaseInput> = {
     placeholder: "Password",
     Icon: Lock,
     variant: "password",
+  },
+};
+
+export const Error: StoryObj<typeof BaseInput> = {
+  args: {
+    placeholder: "Type here",
+    Icon: Mail,
+    error: "Invalid email",
   },
 };

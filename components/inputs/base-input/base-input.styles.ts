@@ -34,4 +34,11 @@ export const stylesheet = createStyleSheet(({ spaces, colors }) => ({
       },
     },
   },
+  error: {
+    color: colors.notification,
+    fontSize: spaces.sm,
+    position: "absolute",
+    bottom: -spaces.md,
+    left: spaces.xs,
+  },
 }));
