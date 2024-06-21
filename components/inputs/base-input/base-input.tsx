@@ -1,6 +1,6 @@
 import { LucideIcon, EyeIcon, EyeOffIcon } from "lucide-react-native";
 import React, { FC } from "react";
-import { Pressable, TextInput, View } from "react-native";
+import { Pressable, TextInput, View, Text } from "react-native";
 import { useStyles } from "react-native-unistyles";
 
 import { stylesheet } from "./base-input.styles";
@@ -12,6 +12,7 @@ type BaseInputProps = {
   placeholder?: string;
   variant: "text" | "password";
   onSubmit?: () => void;
+  error?: string;
 };
 
 export const BaseInput: FC<BaseInputProps> = ({
@@ -21,6 +22,7 @@ export const BaseInput: FC<BaseInputProps> = ({
   placeholder,
   variant,
   onSubmit,
+  error,
 }) => {
   const [focused, setFocused] = React.useState(false);
   const [hidden, setHidden] = React.useState(variant === "password");
@@ -62,6 +64,7 @@ export const BaseInput: FC<BaseInputProps> = ({
           )}
         </Pressable>
       )}
+      {error && <Text style={styles.error}>{error}</Text>}
     </View>
   );
 };

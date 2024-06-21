@@ -12,6 +12,7 @@ export const stylesheet = createStyleSheet(({ spaces, colors, fonts }) => ({
         primary: {
           backgroundColor: pressed ? colors.accent : colors.primary,
           borderRadius: spaces.xl,
+          opacity: pressed ? 0.8 : 1,
         },
         outline: {
           borderColor: pressed ? colors.accent : colors.primary,
@@ -28,7 +29,6 @@ export const stylesheet = createStyleSheet(({ spaces, colors, fonts }) => ({
       disabled: {
         true: {
           opacity: 0.4,
-          backgroundColor: colors.transparent,
         },
         false: {},
       },

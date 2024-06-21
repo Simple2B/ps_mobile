@@ -38,3 +38,11 @@ export const Password: StoryObj<typeof BaseInput> = {
     variant: "password",
   },
 };
+
+export const Error: StoryObj<typeof BaseInput> = {
+  args: {
+    placeholder: "Type here",
+    Icon: Mail,
+    error: "Invalid email",
+  },
+};
