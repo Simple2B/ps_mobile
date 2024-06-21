@@ -1,5 +1,3 @@
-import { Platform } from "react-native";
-
 export const FONT_SIZES = {
   XS: 12,
   S: 14,

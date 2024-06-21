@@ -1,15 +1,15 @@
 import { createStyleSheet } from "react-native-unistyles";
 
 export const stylesheet = createStyleSheet(({ spaces, colors, fonts }) => ({
-  wrapper: ({ pressed }: { pressed: boolean }) => ({
+  button: ({ pressed }: { pressed: boolean }) => ({
     alignItems: "center",
     justifyContent: "center",
     flexDirection: "row",
+    gap: spaces.xxs,
     variants: {
       variant: {
         primary: {
           height: spaces.input,
-
           alignSelf: "stretch",
           backgroundColor: pressed ? colors.accent : colors.primary,
           borderRadius: spaces.xl,
@@ -17,7 +17,6 @@ export const stylesheet = createStyleSheet(({ spaces, colors, fonts }) => ({
         },
         outline: {
           height: spaces.input,
-
           alignSelf: "stretch",
           borderColor: pressed ? colors.accent : colors.primary,
           borderWidth: spaces.one,

@@ -12,8 +12,6 @@ Constants.expoConfig?.extra?.storybookEnabled !== "true" &&
   SplashScreen.preventAutoHideAsync();
 
 function RootLayout() {
-  console.log("RootLayout");
-
   const { loaded, colorTheme } = useAppInit();
 
   if (!loaded) {
@@ -33,11 +31,6 @@ function RootLayout() {
 let AppEntryPoint = RootLayout;
 
 if (Constants.expoConfig?.extra?.storybookEnabled === "true") {
-  console.log(
-    "storybookEnabled",
-    Constants.expoConfig?.extra?.storybookEnabled
-  );
-
   AppEntryPoint = require("../.storybook").default;
 }
 
