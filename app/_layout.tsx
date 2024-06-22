@@ -1,11 +1,30 @@
 import { ThemeProvider } from "@react-navigation/native";
-import { Stack } from "expo-router";
-import * as SplashScreen from "expo-splash-screen";
-import "react-native-reanimated";
+import { QueryClientProvider } from "@tanstack/react-query";
+import axios from "axios";
 import Constants from "expo-constants";
+import { Stack } from "expo-router";
+import * as SecureStore from "expo-secure-store";
+import * as SplashScreen from "expo-splash-screen";
+import React from "react";
+import "react-native-reanimated";
 
-import "@/styles/unistyles";
+import { SecureStorageKeys } from "@/constants/storage-keys";
 import { useAppInit } from "@/hooks/useAppInit";
+import { queryClient } from "@/queryclient";
+import "@/styles/unistyles";
+
+axios.interceptors.request.use(async (request) => {
+  // Your interceptor logic here
+  const token = (await SecureStore.getItemAsync(SecureStorageKeys.TOKEN)) ?? "";
+  const headers = request.headers;
+  if (token && headers) {
+    headers.Authorization = `Bearer ${token}`;
+  }
+  return {
+    ...request,
+    headers,
+  };
+});
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 Constants.expoConfig?.extra?.storybookEnabled !== "true" &&
@@ -20,11 +39,14 @@ function RootLayout() {
 
   return (
     <ThemeProvider value={colorTheme}>
-      <Stack>
-        <Stack.Screen name="index" options={{ headerShown: false }} />
-        <Stack.Screen name="register" options={{ headerShown: false }} />
-        <Stack.Screen name="+not-found" />
-      </Stack>
+      <QueryClientProvider client={queryClient}>
+        <Stack>
+          <Stack.Screen name="(app)" options={{ headerShown: false }} />
+          <Stack.Screen name="login" options={{ headerShown: false }} />
+          <Stack.Screen name="register" options={{ headerShown: false }} />
+          <Stack.Screen name="+not-found" />
+        </Stack>
+      </QueryClientProvider>
     </ThemeProvider>
   );
 }

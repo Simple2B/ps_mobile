@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import { Text, View } from "react-native";
 import { useStyles } from "react-native-unistyles";
+import { useRouter } from "expo-router";
 
 import { LoginForm } from "@/components/forms/login-form/login-form";
 import { Divider } from "@/components/divider/divider";
@@ -9,7 +10,6 @@ import { SocialButtons } from "@/components/buttons/social-buttons/social-button
 import { BaseButton } from "@/components/buttons/base-button/base-button";
 
 import { stylesheet } from "./login-screen.style";
-import { useRouter } from "expo-router";
 
 export const LoginScreen: FC = () => {
   const { styles } = useStyles(stylesheet);
@@ -18,6 +18,7 @@ export const LoginScreen: FC = () => {
   const handleRegister = () => {
     router.push("register");
   };
+
   return (
     <View style={styles.wrapper}>
       <View style={styles.logoArea}>

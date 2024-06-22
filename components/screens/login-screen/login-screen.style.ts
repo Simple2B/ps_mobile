@@ -21,10 +21,10 @@ export const stylesheet = createStyleSheet(
       paddingBottom: spaces.md,
     },
     logoArea: {
-      flex: 1,
       alignItems: "center",
       justifyContent: "center",
       gap: spaces.xl,
+      flex: spaces.one,
     },
     title: {
       fontSize: fontSizes.XL,
