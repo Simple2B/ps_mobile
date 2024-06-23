@@ -1,8 +1,9 @@
 import { View } from "react-native";
-import type { Meta, StoryObj } from "@storybook/react";
-import { BaseInput } from "./base-input";
-import { Mail, Lock } from "lucide-react-native";
 import { useState } from "react";
+import type { Meta, StoryObj } from "@storybook/react";
+import { Mail, Lock } from "lucide-react-native";
+
+import { BaseInput } from "./base-input";
 
 const MyButtonMeta: Meta<typeof BaseInput> = {
   title: "BaseInput",
@@ -17,6 +18,7 @@ const MyButtonMeta: Meta<typeof BaseInput> = {
   ],
 
   render: ({ value: _, onChange: __, ...rest }) => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     const [value, setValue] = useState("");
     return <BaseInput value={value} onChange={setValue} {...rest} />;
   },

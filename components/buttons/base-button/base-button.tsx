@@ -1,5 +1,5 @@
 import React, { FC, ReactNode } from "react";
-import { Pressable, Text, View } from "react-native";
+import { Pressable, Text } from "react-native";
 import { useStyles } from "react-native-unistyles";
 import { stylesheet } from "./base-button.style";
 

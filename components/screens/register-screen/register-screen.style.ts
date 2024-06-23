@@ -3,7 +3,7 @@ import { createStyleSheet } from "react-native-unistyles";
 export const stylesheet = createStyleSheet(
   ({ spaces, colors, fonts, fontSizes }, { statusBar }) => ({
     wrapper: {
-      flex: spaces.one,
+      flexGrow: spaces.one,
       alignItems: "center",
       justifyContent: "center",
       paddingHorizontal: spaces.lg,
