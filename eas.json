@@ -26,7 +26,8 @@
         "serviceAccountKeyPath": "./google-creds.json"
       },
       "ios": {
-        "appleId": "istacat.info@gmail.com"
+        "appleId": "istacat.info@gmail.com",
+        "ascAppId": "6504729096"
       }
     }
   }
