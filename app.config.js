@@ -2,7 +2,7 @@ const appVersion = require("./package.json").version;
 
 module.exports = {
   expo: {
-    name: "ps_mobile",
+    name: "Project S",
     slug: "ps_mobile",
     version: appVersion,
     orientation: "portrait",
