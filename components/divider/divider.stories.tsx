@@ -1,5 +1,5 @@
-import { View, Text } from "react-native";
 import type { Meta, StoryObj } from "@storybook/react";
+import { View } from "react-native";
 import { Divider } from "./divider";
 
 const MyButtonMeta: Meta<typeof Divider> = {
@@ -17,11 +17,3 @@ const MyButtonMeta: Meta<typeof Divider> = {
 export default MyButtonMeta;
 
 export const Basic: StoryObj<typeof Divider> = {};
-
-export const WithText: StoryObj<typeof Divider> = {
-  render: () => (
-    <Divider>
-      <Text>Or</Text>
-    </Divider>
-  ),
-};

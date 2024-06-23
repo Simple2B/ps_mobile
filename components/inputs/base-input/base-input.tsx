@@ -1,6 +1,6 @@
-import { LucideIcon, EyeIcon, EyeOffIcon } from "lucide-react-native";
-import React, { FC, forwardRef } from "react";
-import { Pressable, TextInput, View, Text } from "react-native";
+import { EyeIcon, EyeOffIcon, LucideIcon } from "lucide-react-native";
+import React, { forwardRef } from "react";
+import { Pressable, Text, TextInput, View } from "react-native";
 import { useStyles } from "react-native-unistyles";
 
 import { stylesheet } from "./base-input.styles";
@@ -14,8 +14,7 @@ type BaseInputProps = {
   onSubmit?: () => void;
   error?: string;
 };
-
-export const BaseInput = forwardRef<TextInput, BaseInputProps>(
+const BaseInput = forwardRef<TextInput, BaseInputProps>(
   ({ value, onChange, Icon, placeholder, variant, onSubmit, error }, ref) => {
     const [focused, setFocused] = React.useState(false);
     const [hidden, setHidden] = React.useState(variant === "password");
@@ -27,11 +26,11 @@ export const BaseInput = forwardRef<TextInput, BaseInputProps>(
     };
 
     const handleFocus = () => {
-      () => setFocused(true);
+      setFocused(true);
     };
 
     const handleBlur = () => {
-      () => setFocused(false);
+      setFocused(false);
     };
 
     return (
@@ -63,3 +62,7 @@ export const BaseInput = forwardRef<TextInput, BaseInputProps>(
     );
   }
 );
+
+BaseInput.displayName = "BaseInput";
+
+export { BaseInput };
