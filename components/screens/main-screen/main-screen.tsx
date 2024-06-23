@@ -1,12 +1,13 @@
+import { useQueryClient } from "@tanstack/react-query";
 import { useRouter } from "expo-router";
+import * as SecureStore from "expo-secure-store";
 import React from "react";
 import { Text, View } from "react-native";
 import { useStyles } from "react-native-unistyles";
-import { useQueryClient } from "@tanstack/react-query";
-import * as SecureStore from "expo-secure-store";
 
 import { useAPIGreeting } from "@/api/user/user";
 import { BaseButton } from "@/components/buttons/base-button/base-button";
+import { SecureStorageKeys } from "@/constants/storage-keys";
 import { stylesheet } from "./main-screen.style";
 
 export const MainScreen = () => {
@@ -21,7 +22,7 @@ export const MainScreen = () => {
   });
 
   const handleLogout = async () => {
-    await SecureStore.deleteItemAsync("token");
+    await SecureStore.deleteItemAsync(SecureStorageKeys.TOKEN);
     queryClient.clear();
     router.replace("/login");
   };

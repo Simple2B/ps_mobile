@@ -2,6 +2,10 @@ import React, { FC } from "react";
 import { Text, View } from "react-native";
 import { useStyles } from "react-native-unistyles";
 import { useRouter } from "expo-router";
+import Animated, {
+  useAnimatedKeyboard,
+  useAnimatedStyle,
+} from "react-native-reanimated";
 
 import { LoginForm } from "@/components/forms/login-form/login-form";
 import { Divider } from "@/components/divider/divider";
@@ -15,12 +19,18 @@ export const LoginScreen: FC = () => {
   const { styles } = useStyles(stylesheet);
   const router = useRouter();
 
+  const { height } = useAnimatedKeyboard();
+
+  const animatedStyles = useAnimatedStyle(() => ({
+    transform: [{ translateY: -height.value / 2 }],
+  }));
+
   const handleRegister = () => {
     router.push("register");
   };
 
   return (
-    <View style={styles.wrapper}>
+    <Animated.View style={[styles.wrapper, animatedStyles]}>
       <View style={styles.logoArea}>
         <Logo />
         <Text style={styles.title}>Log in</Text>
@@ -35,6 +45,6 @@ export const LoginScreen: FC = () => {
       <Text style={styles.text}>Have no account yet?</Text>
       <BaseButton title="Register" onPress={handleRegister} variant="outline" />
       <View style={styles.logoArea} />
-    </View>
+    </Animated.View>
   );
 };

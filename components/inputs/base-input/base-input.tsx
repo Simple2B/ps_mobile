@@ -47,6 +47,7 @@ const BaseInput = forwardRef<TextInput, BaseInputProps>(
           placeholderTextColor={theme.colors.text}
           secureTextEntry={variant === "password" && hidden}
           onSubmitEditing={onSubmit}
+          autoCapitalize="none"
         />
         {variant === "password" && (
           <Pressable onPress={handleVisibleToggle}>
