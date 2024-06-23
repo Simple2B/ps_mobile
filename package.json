@@ -10,7 +10,7 @@
     "web": "expo start --web",
     "test": "jest --watchAll",
     "lint": "expo lint",
-    "and-build-dev": "eas build -p android --output=builds/build-and-dev-latest.apk --profile=development --local --non-interactive",
+    "and-build-dev": "eas build -p android --output=build-and-dev-latest.apk --profile=development --local --non-interactive",
     "ios-build-dev": "eas build -p ios --output=builds/build-ios-dev-latest.tar.gz --profile=development --local --non-interactive",
     "storybook-generate": "sb-rn-get-stories",
     "sb": "STORYBOOK_ENABLED='true' expo start",
