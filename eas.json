@@ -22,7 +22,8 @@
     "production": {
       "android": {
         "track": "internal",
-        "releaseStatus": "draft"
+        "releaseStatus": "draft",
+        "serviceAccountKeyPath": "./google-creds.json"
       },
       "ios": {
         "appleId": "istacat.info@gmail.com"

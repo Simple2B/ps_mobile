@@ -31,6 +31,15 @@ jobs:
           eas-version: latest
           token: ${{ secrets.EXPO_TOKEN }}
 
+      - name: Add config files
+
+        uses: mobiledevops/secret-to-file-action@v1
+        with:
+          base64-encoded-secret: ${{ secrets.GOOGLE_CREDS_JSON }}
+          filename: "google-creds.json"
+          is-executable: false
+          working-directory: "."
+
       - name: Install dependencies
         run: yarn install
 
