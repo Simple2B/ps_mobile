@@ -1,0 +1,32 @@
+name: Lint & Type-check
+
+on:
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  test:
+    name: lint & type-check
+    runs-on: Linux
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+          cache: yarn
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Generate api code
+        run: yarn orval --config ./orval.config.ts -p base
+
+      - name: Lint
+        run: yarn lint
+
+      - name: Check types
+        run: yarn type-check

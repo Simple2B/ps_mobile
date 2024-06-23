@@ -1,8 +1,10 @@
+const appVersion = require("./package.json").version;
+
 module.exports = {
   expo: {
     name: "ps_mobile",
     slug: "ps_mobile",
-    version: "1.0.0",
+    version: appVersion,
     orientation: "portrait",
     icon: "./assets/images/icon.png",
     scheme: "myapp",

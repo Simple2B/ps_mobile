@@ -17,7 +17,10 @@
     "get-openapi-json": "./scripts/generate_openapi_json.sh",
     "gen-api": "orval generate --config ./orval.config.ts",
     "eas-build-post-install": "yarn orval --config ./orval.config.ts -p base",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "bump-patch": "npm version patch; git push --follow-tags",
+    "bump-minor": "npm version minor; git push --follow-tags",
+    "bump-major": "npm version major; git push --follow-tags"
   },
   "jest": {
     "preset": "jest-expo"
